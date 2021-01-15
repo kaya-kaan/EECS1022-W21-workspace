@@ -1,11 +1,7 @@
+package console_apps;
 import java.util.Scanner;
 
-/*
- * This is version two of a console application.
- * 
- */
-
-public class CircleApp2 {
+public class CircleApp1 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -18,10 +14,7 @@ public class CircleApp2 {
 		//Step 1: Read a floating number from user.
 		double radius1 = input.nextDouble();
 		//Step 3: Compute the area of the input circle accordingly.
-		
-		//Change: reuse formula  calculation by calling the utility method
-		double area1 = Circle.getArea(radius1);
-		
+		double area1 = 3.14 * radius1 * radius1;
 		String area1s = String.format("%.2f", area1);
 		//Step 4: OUtput the result back to the user.
 		System.out.println("Area of circle is: " + area1s);
@@ -35,10 +28,7 @@ public class CircleApp2 {
 		//Step 1: Read a floating number from user.
 		double radius2 = input.nextDouble();
 		//Step 3: Compute the area of the input circle accordingly.
-		
-		//Change: reuse formula  calculation by calling the utility method
-		double area2 = Circle.getArea(radius2);
-		
+		double area2 = 3.14 * radius2 * radius2;
 		String area2s = String.format("%.2f", area2);
 		//Step 4: OUtput the result back to the user.
 		System.out.println("Area of circle is: " + area2s);
