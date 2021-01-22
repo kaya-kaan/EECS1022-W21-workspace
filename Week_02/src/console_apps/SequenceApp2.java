@@ -2,6 +2,8 @@ package console_apps;
 
 import java.util.Scanner;
 
+import model.Sequence;
+
 public class SequenceApp2 {
 
 	public static void main(String[] args) {
@@ -14,8 +16,8 @@ public class SequenceApp2 {
 		int d = input.nextInt();
 		
 		//Stage 2: Compute the result
-		String seq = "<" + ft + ", " + (ft + d) + ", " + (ft + 2 * d) + ", " + (ft + 3 * d) + ", " + (ft + 4 * d) + ">";
-		int sum = 5 * ft + (1 + 2 + 3 + 4) * d;
+		String seq = Sequence.getSequence2(ft, d);
+		int sum = Sequence.getSum2(ft, d);
 		
 		//Stage 3: Output the result to console
 		System.out.println("Sequence " + seq + " has sum " + sum);
