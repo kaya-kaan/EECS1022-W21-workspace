@@ -23,6 +23,15 @@ public class Utilities {
 		 * 2. No Scanner operations should appear here (e.g., input.nextInt()).
 		 *    Instead, refer to the input parameters of this method.   
 		 */
+		int term1 = ft;
+		int term2 = ft * ratio;
+		int term3 = ft * ratio * ratio;
+		int term4 = ft * ratio * ratio * ratio;
+		int term5 = ft * ratio * ratio * ratio * ratio;
+		
+		double avg = (term1 + term2 + term3 + term4 + term5)/5.0;
+		
+		result = "[" + term1 + "]" + "[" + term2 + "]" + "[" + term3 + "]" + "[" + term4 + "]" + "[" + term5 + "] has average " + avg ;
 		
 		
 		/* Your implementation ends here. */
@@ -47,8 +56,10 @@ public class Utilities {
 		 * 2. No Scanner operations should appear here (e.g., input.nextInt()).
 		 *    Instead, refer to the input parameters of this method.   
 		 */
+		double weightInKg = weight * 0.4536;
+		double heightInM = height * 0.0254;
 		
-		
+		result = weightInKg / (heightInM * heightInM);	
 		
 		/* Your implementation ends here. */
 		
@@ -73,7 +84,14 @@ public class Utilities {
 		 * 2. No Scanner operations should appear here (e.g., input.nextInt()).
 		 *    Instead, refer to the input parameters of this method.   
 		 */
+		int days = seconds / 86400;
+		seconds = seconds % 86400;
+		int hours = seconds / 3600;
+		seconds = seconds % 3600;
+		int minutes = seconds / 60;
+		seconds = seconds % 60;
 		
+		result = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
 		
 		
 		/* Your implementation ends here. */
