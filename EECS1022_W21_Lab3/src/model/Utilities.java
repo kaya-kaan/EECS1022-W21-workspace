@@ -128,8 +128,44 @@ public class Utilities {
 		 * 2. No Scanner operations should appear here (e.g., input.nextInt()).
 		 *    Instead, refer to the input parameters of this method.   
 		 */
+		int smallest = 0;
+		int largest = 0;
 		
+		result += "<";
+
+		if (n1 < n2) {
+			smallest = n1;
+			largest = n2;
+		} else if (n1 > n2){
+			smallest = n2;
+			largest = n1;	
+		} else {
+			smallest = n1;
+			largest = n2 -1;
+		}
 		
+		for ( int i = 0 ; i < smallest ; i++) {
+			if (i > 0) {
+				result += ", ";
+			}
+			result +=  "(" + (ft1 + (d1 * i)) + "), " + "[" + (ft2 + (d2 * i)) + "]";
+		}
+		
+		for ( int i = smallest ; i < largest ; i++) {
+			if (n1 > n2) {
+				if (i > smallest || smallest != 0) {
+					result += ", ";
+				}
+				result +=  "(" + (ft1 + (d1 * i)) + ")";
+			} else {
+				if (i > smallest || smallest != 0) {
+					result += ", ";
+				}
+				result += "[" + (ft2 + (d2 * i)) + "]";
+			}
+		}
+	
+		result += ">";
 		
 		/* Your implementation ends here. */
 		return result;
