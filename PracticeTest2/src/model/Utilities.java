@@ -113,6 +113,16 @@ public class Utilities {
 		 */
 
 		// Your implementation of this method starts here.
+		
+		boolean checkFive = false;
+		
+		for (int i = 0; i < ia.length; i++) {
+			if (ia[i] % 5 == 0) {
+				checkFive = true;
+			}
+		}
+
+		result = checkFive;
 
 		// Do not modify this return statement.
 		return result;
@@ -139,7 +149,18 @@ public class Utilities {
 		 */
 
 		// Your implementation of this method starts here.
+		
+		int secondHighest = 0;
+		int highest = 0;
 
+		for (int i = 0; i < ia.length; i++) {
+			if (ia[i] >= highest) {
+				secondHighest = highest;
+				highest = ia[i];
+			}
+		}
+		
+		result = secondHighest;
 		// Do not modify this return statement.
 		return result;
 	}
@@ -167,7 +188,15 @@ public class Utilities {
 		 */
 
 		// Your implementation of this method starts here.
-
+		
+		int[] temp = new int[ia.length];
+		
+		for (int i = 0; i < ia.length; i++) {
+			temp[(ia.length - 1) - i] = ia[i];
+		}
+		
+		result = temp;
+		
 		// Do not modify this return statement.
 		return result;
 	}
@@ -192,7 +221,27 @@ public class Utilities {
 		 */
 
 		// Your implementation of this method starts here.
-
+		
+		boolean checkReverse = false;
+		int length = 0;
+		
+		if (ia1.length > ia2.length) {
+			length = ia1.length;
+		} else {
+			length = ia2.length;
+		}
+		
+		
+		for (int i = 0; i < length; i++) {
+			if (ia1[(length - 1) - i] != ia2[i]) {
+				checkReverse = false;
+			} else {
+				checkReverse = true;
+			}
+			
+		}
+		
+		result = checkReverse;
 		// Do not modify this return statement.
 		return result;
 	}
@@ -217,6 +266,14 @@ public class Utilities {
 
 		// Your implementation of this method starts here.
 
+		result = new int[n];
+		
+		for (int i = 0; i < n ; i++) {
+			result[i] = start + (diff * i);
+			
+		}
+		
+		
 		// Do not modify this return statement.
 		return result;
 	}
@@ -240,6 +297,18 @@ public class Utilities {
 		 */
 
 		// Your implementation of this method starts here.
+		
+		int diff = ia[1] - ia[0];
+		
+		for (int i = 1; i < ia.length ; i++) {
+			if (ia[i] - ia[i-1] == diff) {
+				result = true;
+			} else {
+				result = false;
+				i = ia.length;
+			}
+			
+		}
 
 		// Do not modify this return statement.
 		return result;
