@@ -1,4 +1,4 @@
-package eecs1022.tutorial.greeting;
+package eecs1022.tutorial.counter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,14 +8,20 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import eecs1022.tutorial.counter.model.Counter;
+
 public class MainActivity extends AppCompatActivity {
 
+    Counter c;
+
+    /* constructor for the app */
     @Override
-    /*This method is invoked when the app is first launched*/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        c = new Counter(0);
     }
+
     /* this mutator sets the output label */
     private void setContentsOfTextView(int id, String newContents) {
         View view = findViewById(id);
@@ -39,15 +45,25 @@ public class MainActivity extends AppCompatActivity {
         return string;
     }
 
-    public void computeButtonSayGreetingsClicked(View view){
-        //retrieve input values from GUI components
-        String textName = getInputOfTextField(R.id.inputName);
-        String textTitle = getItemSelected(R.id.optionsTitles);
-        //do computations based on the retrieved inputs
-        String greetingMessage = "Hello, " + textTitle + " " + textName;
+    // three control methods fot the three buttons
+    public void  computeButtonCreateCounterClicked(View view){
+        //retrieve input from GUI
+        String textInitValue = getInputOfTextField(R.id.inputInitValue);
+        int initValue = Integer.parseInt(textInitValue);
 
-        //display output on the text view
-        setContentsOfTextView(R.id.labelOutput, greetingMessage);
+        //execute effects on model objects
+        c = new Counter(initValue);
 
+        setContentsOfTextView(R.id.outputCounterValue, "Counter Value: " + c.getValue());
+    }
+
+    public void  computeButtonIncrementClicked(View view){
+        c.increment();
+        setContentsOfTextView(R.id.outputCounterValue, "Counter Value: " + c.getValue());
+    }
+
+    public void  computeButtonDecrementClicked(View view){
+        c.decrement();
+        setContentsOfTextView(R.id.outputCounterValue, "Counter Value: " + c.getValue());
     }
 }
