@@ -1,28 +1,27 @@
+import model.Car;
+import model.Student;
+import model.Account;
+import model.Client;
+//import model.Person;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TestingClass {
+	public static void main(String args[]) {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//		int a = 13;
-//		String b = "January";
-//		int c = 2021;
-//		System.out.println("Today is " + a + b + c);
-//		int i = 13;
-//		
-//		int j = 2;
-//		System.out.println((double) (i / j));
-//		
-//		int count = 0;
-//		for (int k = -49; k < 49 ; k++) {
-//			count++;
-//		}
-//		System.out.println(count);
-int i = 5;
-int j = 7;
-int k = 9;
-String s = "Hello ";
-System.out.println(s + i + j + k);
-System.out.println((s + i) + j + k);
-System.out.println(s + (i + j) + k);
-	}
+	int k = 4;
+
+			int sum = 0;
+
+			int[] value = {1, 3, 4, 6, 8, 9, 13, 15, 18, 21 }; 
+			for (int i = 0; i < value.length - k; i++) 
+				if (value[i] % 3 == 0) {
+
+			sum += value [i];
+				}
+
+			System.out.println(sum);
+
+	//System.out.println(a[a.length-1]);		
+}
 }
